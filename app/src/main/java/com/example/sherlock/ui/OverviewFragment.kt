@@ -7,17 +7,26 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.sherlock.R
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
+import com.example.sherlock.databinding.FragmentOverviewBinding
+
 class OverviewFragment : Fragment() {
+
+    private var _binding: FragmentOverviewBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_overview, container, false)
+        _binding = FragmentOverviewBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+
+        init()
+    }
+
+    private fun init() {
+        // Set up ViewHolder and Adapter
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

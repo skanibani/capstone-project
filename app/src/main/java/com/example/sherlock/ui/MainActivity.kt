@@ -23,9 +23,6 @@ import com.google.android.material.appbar.MaterialToolbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel: ItemViewModel
-
-    private val registeredItems = arrayListOf<Item>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,13 +32,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<MaterialToolbar>(R.id.topAppBar).setNavigationOnClickListener {
             findViewById<DrawerLayout>(R.id.drawerLayout).open()
         }
-
-        viewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
-
-        viewModel.items.observe(this, Observer<List<Item>> {
-            registeredItems.addAll(it)
-            // TODO notify Adapter
-        })
 
         init()
     }
@@ -63,16 +53,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        val testItem = Item(
-                "Apple",
-                "Phones",
-                "Black",
-                "Found on chair",
-                "Plastic",
-                "None",
-                "T4"
-        )
 
-        viewModel.insertItem(testItem)
     }
 }

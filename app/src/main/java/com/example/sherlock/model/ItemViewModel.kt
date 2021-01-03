@@ -18,4 +18,9 @@ class ItemViewModel(application: Application) : AndroidViewModel(application) {
     fun insertItem(item: Item) {
         itemRepository.insertItem(item)
     }
+
+    fun deleteAllItems()
+    {
+        itemRepository.deleteAllItems()
+    }
 }

@@ -8,11 +8,13 @@
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".ui.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/Theme.Sherlock.AppBarOverlay">
@@ -27,6 +29,7 @@
                 app:title="@string/app_name" />
 
             <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/purple_500"
@@ -35,10 +38,13 @@
                 app:tabTextColor="@color/white">
 
                 <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabItemFound"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Gevonden" />
+
                 <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabItemLost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Verloren" />
@@ -53,6 +59,7 @@
     <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
 
+        android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

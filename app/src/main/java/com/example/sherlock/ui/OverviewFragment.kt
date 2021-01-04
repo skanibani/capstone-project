@@ -75,4 +75,9 @@ class OverviewFragment : Fragment() {
             itemAdapter.notifyDataSetChanged()
         })
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

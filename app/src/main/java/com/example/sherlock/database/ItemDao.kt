@@ -23,4 +23,10 @@ interface ItemDao {
 
     @Query("DELETE FROM itemTable")
     fun deleteAll()
+
+    @Query("SELECT * FROM itemTable WHERE status = 'Gevonden'")
+    fun getAllFound(): LiveData<List<Item>>
+
+    @Query("SELECT * FROM itemTable WHERE status = 'Verloren'")
+    fun getAllLost(): LiveData<List<Item>>
 }

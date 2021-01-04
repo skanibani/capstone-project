@@ -14,7 +14,7 @@
             android:id="@+id/barAddItem"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="@string/app_name"
+            app:title="@string/appbar_add_item"
             app:navigationIcon="@drawable/baseline_close_24"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             />

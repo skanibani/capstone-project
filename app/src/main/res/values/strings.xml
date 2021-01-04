@@ -9,4 +9,19 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="add_item_header">Label</string>
+    <string name="add_item_flight_number">Vluchtnummer</string>
+    <string name="add_item_description">Waar is het voorwerp gevonden?</string>
+    <string name="add_item_seat">Stoel</string>
+    <string name="add_item_item">Voorwerp</string>
+    <string name="add_item_attribute_description">Welke attributen heeft het voorwerp?</string>
+    <string name="add_item_input_type">Voorwerpsoort</string>
+    <string name="add_item_input_description">Omschrijving</string>
+    <string name="add_item_input_location">Locatie</string>
+    <string name="add_item_input_status">Status</string>
+    <string name="add_item_input_brand">Merk</string>
+    <string name="add_item_btn_register">Registreren</string>
+    <string name="add_item_input_details">Details</string>
+    <string name="add_item_input_material">Materiaal</string>
+    <string name="appbar_add_item">Nieuw voorwerp</string>
 </resources>

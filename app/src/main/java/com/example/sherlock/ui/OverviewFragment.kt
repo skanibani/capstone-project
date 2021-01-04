@@ -44,7 +44,7 @@ class OverviewFragment : Fragment() {
 
         // ViewModel
         viewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
-
+        // viewModel.deleteAllItems()
         init()
 
         observeViewModel()
@@ -71,9 +71,15 @@ class OverviewFragment : Fragment() {
 
     private fun observeViewModel() {
         viewModel.items.observe(viewLifecycleOwner, Observer<List<Item>> {
+            registeredItems.clear()
             registeredItems.addAll(it)
             itemAdapter.notifyDataSetChanged()
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        itemAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

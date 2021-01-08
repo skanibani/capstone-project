@@ -1,4 +1,4 @@
-package com.example.sherlock.ui
+package com.example.sherlock.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +14,7 @@ class ItemAdapter(private val items: List<Item>) : RecyclerView.Adapter<ItemAdap
         private val binding = ItemRegisteredItemBinding.bind(itemView)
 
         fun databind(item: Item) {
+            binding.txtRegisteredItemCategory.text = item.category
             binding.txtRegisteredItemName.text = item.description
             binding.txtRegisteredItemLocation.text = item.location
         }

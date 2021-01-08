@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.AttributeSet
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
@@ -38,23 +39,27 @@ class MainActivity : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_item_overview -> {
+                R.id.OverviewFragment -> {
                     it.isChecked = true
+                    navController.navigate(R.id.action_OverviewFragment_self)
                     drawerLayout.close()
                     true
                 }
-                R.id.nav_item_scan -> {
+                R.id.scanItemFragment -> {
                     it.isChecked = true
+                    navController.navigate(R.id.action_OverviewFragment_to_scanItemFragment)
                     drawerLayout.close()
                     true
                 }
-                R.id.nav_item_gather -> {
+                R.id.gatherFragment -> {
                     it.isChecked = true
+                    navController.navigate(R.id.action_OverviewFragment_to_gatherFragment)
                     drawerLayout.close()
                     true
                 }
-                R.id.nav_item_out_system -> {
+                R.id.itemOutSystemFragment -> {
                     it.isChecked = true
+                    navController.navigate(R.id.action_OverviewFragment_to_itemOutSystemFragment)
                     drawerLayout.close()
                     true
                 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/OverviewFragment"
-        android:name="com.example.sherlock.ui.OverviewFragment"
+        android:name="com.example.sherlock.ui.fragment.OverviewFragment"
         android:label="Overview Fragment"
         tools:layout="@layout/fragment_overview">
         <action
@@ -22,10 +22,13 @@
         <action
             android:id="@+id/action_OverviewFragment_to_scanItemFragment"
             app:destination="@id/scanItemFragment" />
+        <action
+            android:id="@+id/action_OverviewFragment_self"
+            app:destination="@id/OverviewFragment" />
     </fragment>
     <fragment
         android:id="@+id/AddItemFragment"
-        android:name="com.example.sherlock.ui.AddItemFragment"
+        android:name="com.example.sherlock.ui.fragment.AddItemFragment"
         android:label="Add Item Fragment"
         tools:layout="@layout/fragment_add_item">
         <action
@@ -34,17 +37,17 @@
     </fragment>
     <fragment
         android:id="@+id/gatherFragment"
-        android:name="com.example.sherlock.ui.GatherFragment"
+        android:name="com.example.sherlock.ui.fragment.GatherFragment"
         android:label="fragment_gather"
         tools:layout="@layout/fragment_gather" />
     <fragment
         android:id="@+id/itemOutSystemFragment"
-        android:name="com.example.sherlock.ui.ItemOutSystemFragment"
+        android:name="com.example.sherlock.ui.fragment.ItemOutSystemFragment"
         android:label="fragment_item_out_system"
         tools:layout="@layout/fragment_item_out_system" />
     <fragment
         android:id="@+id/scanItemFragment"
-        android:name="com.example.sherlock.ui.ScanItemFragment"
+        android:name="com.example.sherlock.ui.fragment.ScanItemFragment"
         android:label="fragment_scan_item"
         tools:layout="@layout/fragment_scan_item" />
 </navigation>

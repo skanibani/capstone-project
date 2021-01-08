@@ -2,6 +2,7 @@ package com.example.sherlock.database
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import com.example.sherlock.dao.ItemDao
 import com.example.sherlock.model.Item
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,6 +26,14 @@ class ItemRepository(context: Context) {
 
     fun getAllItems(): LiveData<List<Item>> {
         return itemDao.getAll()
+    }
+
+    fun getAllLost(): LiveData<List<Item>> {
+        return itemDao.getAllLost()
+    }
+
+    fun getAllFound(): LiveData<List<Item>> {
+        return itemDao.getAllFound()
     }
 
     fun insertItem(item: Item) {

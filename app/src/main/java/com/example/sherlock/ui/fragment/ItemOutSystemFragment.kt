@@ -1,4 +1,4 @@
-package com.example.sherlock.ui
+package com.example.sherlock.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

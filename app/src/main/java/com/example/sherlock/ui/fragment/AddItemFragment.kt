@@ -1,4 +1,4 @@
-package com.example.sherlock.ui
+package com.example.sherlock.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.example.sherlock.R
 
 import com.example.sherlock.databinding.FragmentAddItemBinding
 import com.example.sherlock.model.Item

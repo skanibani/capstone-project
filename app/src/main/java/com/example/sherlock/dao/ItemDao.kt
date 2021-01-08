@@ -1,4 +1,4 @@
-package com.example.sherlock.database
+package com.example.sherlock.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

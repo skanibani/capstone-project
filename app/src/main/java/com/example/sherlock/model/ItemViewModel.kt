@@ -10,6 +10,8 @@ class ItemViewModel(application: Application) : AndroidViewModel(application) {
 
     private val itemRepository = ItemRepository(application.applicationContext)
     var items = itemRepository.getAllItems()
+    var lostItems = itemRepository.getAllLost()
+    var foundItems = itemRepository.getAllFound()
 
     fun getAllItems() {
         items = itemRepository.getAllItems()

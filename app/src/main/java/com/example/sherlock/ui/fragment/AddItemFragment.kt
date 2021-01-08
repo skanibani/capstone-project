@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 
 import com.example.sherlock.databinding.FragmentAddItemBinding
 import com.example.sherlock.model.Item
@@ -55,7 +56,7 @@ class AddItemFragment : Fragment() {
             registerItem(newItem)
 
             // TODO refactor app so proper navigation is possible
-            // findNavController().popBackStack(R.id.OverviewFragment, false)
+            findNavController().navigateUp()
         }
     }
 

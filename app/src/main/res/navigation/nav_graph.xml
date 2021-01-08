@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/OverviewFragment"
         android:name="com.example.sherlock.ui.fragment.OverviewFragment"
-        android:label="Overview Fragment"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_overview">
         <action
             android:id="@+id/action_OverviewFragment_to_AddItemFragment"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/AddItemFragment"
         android:name="com.example.sherlock.ui.fragment.AddItemFragment"
-        android:label="Add Item Fragment"
+        android:label="@string/add_item_appbar"
         tools:layout="@layout/fragment_add_item">
         <action
             android:id="@+id/action_AddItemFragment_to_OverviewFragment"

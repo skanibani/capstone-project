@@ -4,33 +4,62 @@ import android.content.Context
 import android.os.Bundle
 import android.util.AttributeSet
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import androidx.activity.viewModels
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.example.sherlock.R
-import com.example.sherlock.database.ItemDao
-import com.example.sherlock.database.ItemDatabase
-import com.example.sherlock.databinding.ActivityMainBinding
-import com.example.sherlock.model.Item
-import com.example.sherlock.model.ItemViewModel
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         setSupportActionBar(findViewById(R.id.topAppBar))
 
-        findViewById<MaterialToolbar>(R.id.topAppBar).setNavigationOnClickListener {
-            findViewById<DrawerLayout>(R.id.drawerLayout).open()
+        val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val topAppBar = findViewById<MaterialToolbar>(R.id.topAppBar)
+        val navView = findViewById<NavigationView>(R.id.navView)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+
+        val navController = navHostFragment.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        topAppBar.setupWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+
+        topAppBar.setNavigationOnClickListener {
+            drawerLayout.open()
+        }
+
+        navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_item_overview -> {
+                    it.isChecked = true
+                    drawerLayout.close()
+                    true
+                }
+                R.id.nav_item_scan -> {
+                    it.isChecked = true
+                    drawerLayout.close()
+                    true
+                }
+                R.id.nav_item_gather -> {
+                    it.isChecked = true
+                    drawerLayout.close()
+                    true
+                }
+                R.id.nav_item_out_system -> {
+                    it.isChecked = true
+                    drawerLayout.close()
+                    true
+                }
+                else -> false
+            }
         }
 
         init()

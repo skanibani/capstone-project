@@ -5,16 +5,16 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/item1"
+            android:id="@+id/nav_item_overview"
             android:checked="true"
             android:icon="@drawable/baseline_list_24"
-            android:title="Overzicht" />
+            android:title="@string/menu_overzicht" />
 
         <item
-            android:id="@+id/item2"
+            android:id="@+id/nav_item_scan"
             android:checked="false"
             android:icon="@drawable/baseline_qr_code_scanner_24"
-            android:title="Voorwerp scannen" />
+            android:title="@string/menu_scan" />
 
     </group>
 
@@ -23,16 +23,16 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/item3"
+            android:id="@+id/nav_item_gather"
             android:checked="false"
             android:icon="@drawable/baseline_archive_24"
-            android:title="Ophalen" />
+            android:title="@string/menu_gather" />
 
         <item
-            android:id="@+id/item4"
+            android:id="@+id/nav_item_out_system"
             android:checked="false"
             android:icon="@drawable/baseline_unarchive_24"
-            android:title="Dag-overdracht" />
+            android:title="@string/menu_out_system" />
 
     </group>
 </menu>

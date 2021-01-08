@@ -16,12 +16,16 @@ import com.example.sherlock.R
 import com.example.sherlock.databinding.FragmentOverviewBinding
 import com.example.sherlock.model.Item
 import com.example.sherlock.model.ItemViewModel
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class OverviewFragment : Fragment() {
 
     // Binding
-    private var _binding: FragmentOverviewBinding? = null
-    private val binding get() = _binding!!
+//    private var _binding: FragmentOverviewBinding? = null
+//    private val binding get() = _binding!!
+
+    // ViewBinding does not work with included nav_host_fragments
+    // Use regular findViewByID for <include> tags.
 
     // Needed for RecyclerView
     private val registeredItems = arrayListOf<Item>()
@@ -34,9 +38,7 @@ class OverviewFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentOverviewBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return inflater.inflate(R.layout.fragment_overview, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,17 +47,17 @@ class OverviewFragment : Fragment() {
         // ViewModel
         viewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
         // viewModel.deleteAllItems()
-        init()
+        init(view)
 
         observeViewModel()
     }
 
-    private fun init() {
+    private fun init(view: View) {
         // Set up ViewHolder and Adapter
-
-        binding.rvRegisteredItems.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        binding.rvRegisteredItems.adapter = itemAdapter
-        binding.rvRegisteredItems.addItemDecoration(
+        val rvRgisteredItems = view.findViewById<RecyclerView>(R.id.rvRegisteredItems)
+        rvRgisteredItems.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        rvRgisteredItems.adapter = itemAdapter
+        rvRgisteredItems.addItemDecoration(
             DividerItemDecoration(
                 context,
             DividerItemDecoration.VERTICAL
@@ -63,8 +65,9 @@ class OverviewFragment : Fragment() {
         )
 
         // Fab
-        binding.fabOverview.setOnClickListener {
-            findNavController().navigate(R.id.action_OverviewFragment_to_addItemActivity)
+        val fabOverview = view.findViewById<FloatingActionButton>(R.id.fabOverview)
+        fabOverview.setOnClickListener {
+            findNavController().navigate(R.id.action_OverviewFragment_to_AddItemFragment)
         }
 
     }
@@ -80,10 +83,5 @@ class OverviewFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         itemAdapter.notifyDataSetChanged()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

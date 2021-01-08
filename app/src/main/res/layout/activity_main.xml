@@ -17,6 +17,7 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="0dp"
             android:theme="@style/Theme.Sherlock.AppBarOverlay">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -28,28 +29,7 @@
                 app:navigationIcon="@drawable/baseline_menu_24"
                 app:title="@string/app_name" />
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/purple_500"
-                app:tabIconTint="@color/white"
-                app:tabIndicatorColor="@color/white"
-                app:tabTextColor="@color/white">
 
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tabItemFound"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gevonden" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tabItemLost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Verloren" />
-
-            </com.google.android.material.tabs.TabLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
         <include layout="@layout/content_main" />

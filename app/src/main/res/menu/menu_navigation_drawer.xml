@@ -5,13 +5,13 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_item_overview"
+            android:id="@+id/OverviewFragment"
             android:checked="true"
             android:icon="@drawable/baseline_list_24"
             android:title="@string/menu_overzicht" />
 
         <item
-            android:id="@+id/nav_item_scan"
+            android:id="@+id/scanItemFragment"
             android:checked="false"
             android:icon="@drawable/baseline_qr_code_scanner_24"
             android:title="@string/menu_scan" />
@@ -23,13 +23,13 @@
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_item_gather"
+            android:id="@+id/gatherFragment"
             android:checked="false"
             android:icon="@drawable/baseline_archive_24"
             android:title="@string/menu_gather" />
 
         <item
-            android:id="@+id/nav_item_out_system"
+            android:id="@+id/itemOutSystemFragment"
             android:checked="false"
             android:icon="@drawable/baseline_unarchive_24"
             android:title="@string/menu_out_system" />
